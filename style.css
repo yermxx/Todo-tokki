@@ -92,7 +92,7 @@ body {
 #todo-form {
   display: flex;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 #todo-form input {
@@ -119,6 +119,25 @@ body {
   letter-spacing: -0.01em;
   color: #F9FCF3;
   background-color: #ACCF61;
+}
+
+#todo-all {
+  font-family: 'Dovemayo-Medium';
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+#todo-all img {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+}
+
+#todo-all a {
+  display: flex;
+  align-items: center;
+  color: #888888;
 }
 
 #todo-list li {
