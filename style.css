@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Dovemayo-Medium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/Dovemayo-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Reset CSS */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font-family: "Poppins", sans-serif;
+  border: none;
+}
+
+button:focus,
+button:active,
+input:focus,
+input:active,
+textarea:focus,
+textarea:active {
+  box-shadow: none;
+  outline: none;
+}
+
+ul,
+ol,
+li {
+  padding-left: 0;
+  margin-left: 0;
+  list-style-type: none;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: #2B292D;
+}
+
+/* Main */
+
+body {
+  background-color: #D8E6A5;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 500px;
+  height: 800px;
+  border-radius: 14px;
+  background-color: #fff;
+  padding: 50px 30px;
+}
+
+.todo-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.rabbit {
+  background-image: url(./assets/sleeping-tokki.png);
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  margin-right: 2px;
+}
+
+.todo-title h1 {
+  line-height: 1.1;
+}
+
+#todo-form {
+  display: flex;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+#todo-form input {
+  font-family: 'Dovemayo-Medium';
+  width: 350px;
+  height: 48px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 18px;
+  padding: 10px 15px;
+  margin-right: 8px;
+}
+
+#todo-form input:focus {
+  border: 1px solid #ACCF61;
+}
+
+#todo-form button {
+  width: 100px;
+  height: 48px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #F9FCF3;
+  background-color: #ACCF61;
+}
+
+#todo-list li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+#todo-list li .checkbox {
+  width: 21px;
+  height: 21px;
+  margin-right: 18px;
+  cursor: pointer;
+}
+
+#todo-list li span {
+  font-family: 'Dovemayo-Medium';
+  font-weight: 600;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+#todo-list .delete-icon {
+  position: absolute;
+  right: 0;
+  display: block;
+  width: 21px;
+  height: 21px;
+}
