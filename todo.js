@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
 
 const todoInput = document.querySelector('.list-input');
@@ -7,7 +6,10 @@ const todoList = document.getElementById('todo-list');
 const rabbitImage = document.querySelector('.rabbit');
 const allCheck = document.getElementById('all-check');
 const allDelete = document.getElementById('all-delete');
+const allCheckImage = allCheck.querySelector('img');
+const allDeleteImage = allDelete.querySelector('img');
 
+/* 타이틀 토끼 이미지 변경 */
 function updateRabbitImage() {
   if (todoList.getElementsByTagName('li').length > 0) {
     rabbitImage.style.backgroundImage = "url('./assets/awake-tokki.png')";
@@ -21,6 +23,7 @@ function areAllChecked() {
   return Array.from(checkboxes).every(checkbox => checkbox.dataset.checked === 'true');
 }
 
+/* ADD 버튼을 눌렀을 때 실행될 목록 */
 submitBtn.addEventListener('click', function(event) {
 
   event.preventDefault();
@@ -74,29 +77,43 @@ submitBtn.addEventListener('click', function(event) {
   }
   });
 
+  /* 전체 선택 */
+  allCheck.dataset.checked = 'false';
   allCheck.addEventListener('click', function(event) {
     event.preventDefault();
+    if (allCheck.dataset.checked === 'false') {
+        allCheck.style.color = '#ACCF61';
+        allCheckImage.src = './assets/all-check-green.png';
+        allCheck.dataset.checked = 'true';
+    } else {
+        allCheck.style.color = '';
+        allCheckImage.src = './assets/all-check.png';
+        allCheck.dataset.checked = 'false';
+    }
+    
     const checkboxes = document.querySelectorAll('.checkbox');
     checkboxes.forEach((checkbox) => {
       checkbox.click();
     });
   });
 
+  /* 전체 삭제 */
   allDelete.addEventListener('click', function(event) {
     event.preventDefault();
+
     if (areAllChecked()) {
-      const todos = todoList.querySelectorAll('li');
-      todos.forEach((li) => {
+      allDelete.style.color = '#ACCF61';
+      allDeleteImage.src = './assets/all-delete-green.png';
+      const toDos = todoList.querySelectorAll('li');
+      toDos.forEach((li) => {
           todoList.removeChild(li);
       });
+      location.reload(); // 새로고침
       updateRabbitImage();
     } else {
-     alert('전체 선택 후 삭제 가능');
+      alert('먼저 전체 선택 버튼을 눌러주세요.');
     }
   });
 
   updateRabbitImage();
 });
-
-
-
