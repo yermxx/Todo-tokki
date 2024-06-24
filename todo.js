@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
 const todoInput = document.querySelector('.list-input');
 const submitBtn = document.querySelector('.submit-btn');
 const todoList = document.getElementById('todo-list');
+
 const rabbitImage = document.querySelector('.rabbit');
+
 const allCheck = document.getElementById('all-check');
 const allDelete = document.getElementById('all-delete');
 const allCheckImage = allCheck.querySelector('img');
@@ -18,12 +20,13 @@ function updateRabbitImage() {
   }
 }
 
+/* 전체 선택 요소 상태 확인 */
 function areAllChecked() {
   const checkboxes = document.querySelectorAll('.checkbox');
   return Array.from(checkboxes).every(checkbox => checkbox.dataset.checked === 'true');
 }
 
-/* ADD 버튼을 눌렀을 때 실행될 목록 */
+/* ADD 버튼 click 시 이벤트 실행 */
 submitBtn.addEventListener('click', function(event) {
 
   event.preventDefault();
@@ -77,7 +80,7 @@ submitBtn.addEventListener('click', function(event) {
   }
   });
 
-  /* 전체 선택 */
+  /* 전체 선택 click 이벤트 */
   allCheck.dataset.checked = 'false';
   allCheck.addEventListener('click', function(event) {
     event.preventDefault();
@@ -97,7 +100,7 @@ submitBtn.addEventListener('click', function(event) {
     });
   });
 
-  /* 전체 삭제 */
+  /* 전체 삭제 click 이벤트 */
   allDelete.addEventListener('click', function(event) {
     event.preventDefault();
 
@@ -111,7 +114,7 @@ submitBtn.addEventListener('click', function(event) {
       location.reload(); // 새로고침
       updateRabbitImage();
     } else {
-      alert('먼저 전체 선택 버튼을 눌러주세요.');
+      alert('전체 삭제를 위해서는 먼저 전체 선택을 해주세요!');
     }
   });
 
