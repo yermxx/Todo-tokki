@@ -7,17 +7,15 @@ const todoList = document.getElementById('todo-list');
 const rabbitImage = document.querySelector('.rabbit');
 
 const allCheck = document.getElementById('all-check');
-const allDelete = document.getElementById('all-delete');
 const allCheckImage = allCheck.querySelector('img');
+const allDelete = document.getElementById('all-delete');
 const allDeleteImage = allDelete.querySelector('img');
 
 /* 타이틀 토끼 이미지 변경 */
 function updateRabbitImage() {
-  if (todoList.getElementsByTagName('li').length > 0) {
-    rabbitImage.style.backgroundImage = "url('./assets/awake-tokki.png')";
-  } else {
-    rabbitImage.style.backgroundImage = "url('./assets/sleeping-tokki.png')";
-  }
+  rabbitImage.style.backgroundImage = todoList.getElementsByTagName('li').length > 0
+    ? "url('./assets/awake-tokki.png')"
+    : "url('./assets/sleeping-tokki.png')";
 }
 
 /* 전체 선택 요소 상태 확인 */
@@ -84,20 +82,21 @@ submitBtn.addEventListener('click', function(event) {
   allCheck.dataset.checked = 'false';
   allCheck.addEventListener('click', function(event) {
     event.preventDefault();
-    if (allCheck.dataset.checked === 'false') {
-        allCheck.style.color = '#ACCF61';
-        allCheckImage.src = './assets/all-check-green.png';
-        allCheck.dataset.checked = 'true';
-    } else {
-        allCheck.style.color = '';
-        allCheckImage.src = './assets/all-check.png';
-        allCheck.dataset.checked = 'false';
-    }
-    
+
     const checkboxes = document.querySelectorAll('.checkbox');
     checkboxes.forEach((checkbox) => {
       checkbox.click();
     });
+
+    if (allCheck.dataset.checked === 'false') {
+      allCheck.style.color = '#ACCF61';
+      allCheckImage.src = './assets/all-check-green.png';
+      allCheck.dataset.checked = 'true';
+  } else {
+      allCheck.style.color = '';
+      allCheckImage.src = './assets/all-check.png';
+      allCheck.dataset.checked = 'false';
+  }
   });
 
   /* 전체 삭제 click 이벤트 */
@@ -111,7 +110,7 @@ submitBtn.addEventListener('click', function(event) {
       toDos.forEach((li) => {
           todoList.removeChild(li);
       });
-      location.reload(); // 새로고침
+      location.reload();
       updateRabbitImage();
     } else {
       alert('전체 삭제를 위해서는 먼저 전체 선택을 해주세요!');
