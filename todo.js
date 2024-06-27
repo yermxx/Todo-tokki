@@ -53,6 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
       todoList.removeChild(li);
       updateTokkiImage();
       updateAllCheckState();
+      updateTaskCount();
+
+      const updateDeleteIcons = document.querySelectorAll('.delete-icon').length;
+      if (updateDeleteIcons === 0) {
+          location.reload();
+      }
     });
 
     deleteIcon.addEventListener('mouseover', () => {
@@ -67,12 +73,26 @@ document.addEventListener('DOMContentLoaded', () => {
     li.appendChild(deleteIcon);
 
     todoList.appendChild(li);
+
     todoInput.value= '';
+    todoInput.focus();
 
     updateTokkiImage();
-    updateAllCheckState();
+    updateTaskCount();
     }
     });
+
+  /* 태스크 개수 업데이트 */
+  function updateTaskCount() {
+    const taskCount = document.getElementById('taskCount');
+    const tasks = todoList.getElementsByTagName('li').length;
+
+    if (tasks > 0) {
+      taskCount.textContent = `✨ ${tasks} Tasks! ✨`;
+    } else {
+      taskCount.textContent = '';
+    }
+  }
 
   /* 전체 선택 요소 상태 확인 */
   function areAllChecked() {
@@ -94,8 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* 전체 선택 click 이벤트 */
-  allCheck.dataset.checked = 'false';
   allCheck.addEventListener('click', function(event) {
+    allCheck.dataset.checked = 'false';
     event.preventDefault();
 
     const checkboxes = document.querySelectorAll('.checkbox');
@@ -133,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
       location.reload();
       updateTokkiImage();
       updateAllCheckState();
+      updateTaskCount();
     } else {
       alert('전체 삭제를 위해서는 먼저 전체 선택을 해주세요!');
     }
@@ -140,4 +161,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   updateTokkiImage();
   updateAllCheckState();
+  updateTaskCount();
 });
