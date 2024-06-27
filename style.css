@@ -299,5 +299,18 @@ body {
   margin: 0;
   font-size: 20px;
   font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+#showDate {
+  font-family: 'NanumSquareRound';
+  position: absolute;
+  bottom: 50px;
+  right: 40px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1;
   letter-spacing: -0.01em;
 }

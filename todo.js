@@ -94,6 +94,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  /* 현재 날짜 및 시간 나타내기 */
+  const showDate = () => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+  
+    return `${year}/${month}/${day}`;
+  };
+
+  function displayDateTime() {
+    const dateTime = showDate();
+    document.getElementById('showDate').innerText = dateTime;
+  }
+
+  window.onload = function() {
+    displayDateTime();
+  }
+
   /* 전체 선택 요소 상태 확인 */
   function areAllChecked() {
     const checkboxes = document.querySelectorAll('.checkbox');
