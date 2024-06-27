@@ -3,8 +3,8 @@
 }
 
 @font-face {
-  font-family: 'Dovemayo-Medium';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/Dovemayo-Medium.woff') format('woff');
+  font-family: 'NanumSquareRound';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -62,22 +62,27 @@ body {
 }
 
 .container {
+  position: relative;
   max-width: 500px;
   height: 800px;
   border-radius: 14px;
   background-color: #fff;
-  padding: 50px 30px;
+  padding: 50px 40px;
+}
+
+#showDate {
+  text-align: center;
 }
 
 .todo-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.todo-title .rabbit {
+.todo-title .tokki {
   background-image: url(./assets/sleeping-tokki.png);
   width: 100px;
   height: 100px;
@@ -94,15 +99,15 @@ body {
 #todo-form {
   display: flex;
   width: 100%;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
 }
 
 #todo-form input {
-  font-family: 'Dovemayo-Medium';
-  width: 350px;
-  height: 48px;
+  font-family: 'NanumSquareRound';
+  width: 300px;
+  height: 52px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 10px;
   font-size: 18px;
   padding: 10px 15px;
   margin-right: 8px;
@@ -114,34 +119,141 @@ body {
 
 #todo-form button {
   width: 100px;
-  height: 48px;
-  border-radius: 4px;
-  font-size: 18px;
+  height: 52px;
+  position: relative;
+  padding: 10px 22px;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  font-size: 16px;
   font-weight: 600;
-  letter-spacing: -0.01em;
-  color: #F9FCF3;
+  cursor: pointer;
   background-color: #ACCF61;
+  transition: all 0.2s ease;
+}
+
+#todo-form button:active {
+  transform: scale(0.96);
+}
+
+#todo-form button::before,
+#todo-form button::after {
+  position: absolute;
+  content: "";
+  width: 150%;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: 0;
+  background-repeat: no-repeat;
+}
+
+#todo-form button:hover:before {
+  top: -70%;
+  background-image: radial-gradient(circle, #ACCF61 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #ACCF61 20%, transparent 30%),
+    radial-gradient(circle, #ACCF61 20%, transparent 20%),
+    radial-gradient(circle, #ACCF61 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #ACCF61 15%, transparent 20%),
+    radial-gradient(circle, #ACCF61 20%, transparent 20%),
+    radial-gradient(circle, #ACCF61 20%, transparent 20%),
+    radial-gradient(circle, #ACCF61 20%, transparent 20%),
+    radial-gradient(circle, #ACCF61 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+  background-position: 50% 120%;
+  animation: greentopBubbles 0.6s ease forwards;
+}
+
+@keyframes greentopBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+      50% 50%, 65% 20%, 90% 30%;
+  }
+
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+      50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+#todo-form button:hover::after {
+  bottom: -70%;
+  background-image: radial-gradient(circle, #ACCF61 20%, transparent 20%),
+    radial-gradient(circle, #ACCF61 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #ACCF61 15%, transparent 20%),
+    radial-gradient(circle, #ACCF61 20%, transparent 20%),
+    radial-gradient(circle, #ACCF61 20%, transparent 20%),
+    radial-gradient(circle, #ACCF61 20%, transparent 20%),
+    radial-gradient(circle, #ACCF61 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+  background-position: 50% 0%;
+  animation: greenbottomBubbles 0.6s ease forwards;
+}
+
+@keyframes greenbottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+      105% 0%;
+  }
+
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+      110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
 }
 
 #todo-all {
-  font-family: 'Dovemayo-Medium';
+  font-family: 'NanumSquareRound';
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
 #todo-all img {
-  width: 21px;
-  height: 21px;
-  margin-right: 6px;
+  width: 19px;
+  height: 19px;
+  margin-right: 8px;
 }
 
 #todo-all a {
   display: flex;
   align-items: center;
   color: #888888;
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: -0.01em;
+}
+
+#todo-list {
+  overflow: auto;
+  max-height: 375px;
+  margin-bottom: 6px;
+}
+
+#todo-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+#todo-list::-webkit-scrollbar-thumb:hover {
+  background-color: #ACCF61;
+  border-radius: 10px;
+}
+
+#todo-list::-webkit-scrollbar-track:hover {
+  background-color: #ccc;
+  border-radius: 10px;
 }
 
 #todo-list li {
@@ -150,21 +262,25 @@ body {
   align-items: center;
   width: 100%;
   height: 40px;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
 }
 
 #todo-list li .checkbox {
-  width: 21px;
-  height: 21px;
-  margin-right: 18px;
+  width: 24px;
+  height: 24px;
+  margin-right: 14px;
   cursor: pointer;
 }
 
 #todo-list li span {
-  font-family: 'Dovemayo-Medium';
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'NanumSquareRound';
   font-weight: 600;
   font-size: 20px;
   font-weight: 400;
+  line-height: 1;
   letter-spacing: -0.01em;
 }
 
@@ -174,4 +290,14 @@ body {
   display: block;
   width: 21px;
   height: 21px;
+}
+
+#taskCount {
+  font-family: 'NanumSquareRound';
+  position: absolute;
+  bottom: 50px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
