@@ -16,6 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     event.preventDefault();
 
+    /* 토끼 이미지 상태 업데이트 */
+    function updateTokkiImage() {
+      tokkiImage.style.backgroundImage = todoList.getElementsByTagName('li').length > 0
+        ? "url('./assets/awake-tokki.png')"
+        : "url('./assets/sleeping-tokki.png')";
+    }
+
     if (todoInput.value !== '') {
     const li = document.createElement('li');
 
@@ -24,22 +31,21 @@ document.addEventListener('DOMContentLoaded', () => {
     checkBox.alt = 'checkbox';
     checkBox.classList.add('checkbox');
     checkBox.dataset.checked = 'false'
+
     checkBox.addEventListener('click', function() {
       if (checkBox.dataset.checked === 'false') {
+          span.style.textDecoration = 'line-through';
+          span.style.textDecoration.color = '#ccc';
+          span.style.color = '#ccc';
           checkBox.src = './assets/check-focus.png';
           checkBox.dataset.checked = 'true';
       } else {
+          span.style.textDecoration = 'none';
+          span.style.color = '';
           checkBox.src = './assets/check.png';
           checkBox.dataset.checked = 'false';
       }
     });
-
-    /* 토끼 이미지 상태 업데이트 */
-    function updateTokkiImage() {
-      tokkiImage.style.backgroundImage = todoList.getElementsByTagName('li').length > 0
-        ? "url('./assets/awake-tokki.png')"
-        : "url('./assets/sleeping-tokki.png')";
-    }
 
     const span = document.createElement('span');
     span.textContent = todoInput.value;
