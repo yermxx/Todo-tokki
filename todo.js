@@ -103,11 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
   /* 현재 날짜 및 시간 나타내기 */
   const showDate = () => {
     const now = new Date();
-    const year = now.getFullYear();
+    // const year = now.getFullYear();
     const month = String(now.getMonth() + 1).padStart(2, '0');
     const day = String(now.getDate()).padStart(2, '0');
+    const weekdays = ['일', '월', '화', '수', '목', '금', '토'];
+    const weekday = weekdays[now.getDay()];
   
-    return `${year}/${month}/${day}`;
+    return `${month}월 ${day}일 ${weekday}요일`;
   };
 
   function displayDateTime() {
