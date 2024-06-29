@@ -144,11 +144,17 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
 
     const checkboxes = document.querySelectorAll('.checkbox');
+    const todoText = document.querySelectorAll('.todo-text');
 
-    if (allCheck.dataset.checked === 'false') {
+    if (!areAllChecked()) {
       checkboxes.forEach((checkbox) => {
         checkbox.src = './assets/check-focus.png';
         checkbox.dataset.checked = 'true';
+      });
+      todoText.forEach((todoText) => {
+        todoText.style.textDecoration = 'line-through';
+        todoText.style.textDecoration.color = '#ccc';
+        todoText.style.color = '#ccc';
       });
       allCheck.style.color = '#ACCF61';
       allCheckImage.src = './assets/all-check-green.png';
@@ -157,6 +163,10 @@ document.addEventListener('DOMContentLoaded', () => {
       checkboxes.forEach((checkbox) => {
         checkbox.src = './assets/check.png';
         checkbox.dataset.checked = 'false';
+      });
+      todoText.forEach((todoText) => {
+        todoText.style.textDecoration = 'none';
+        todoText.style.color = '';
       });
       allCheck.style.color = '';
       allCheckImage.src = './assets/all-check.png';
