@@ -54,7 +54,7 @@ p {
 /* Container */
 
 body {
-  background-color: #D8E6A5;
+  background-color: #fff;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -66,7 +66,7 @@ body {
   max-width: 500px;
   height: 800px;
   border-radius: 14px;
-  background-color: #fff;
+  background-color: #F9CA00;
   padding: 50px 40px;
 }
 
@@ -76,22 +76,24 @@ body {
 
 .todo-title {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: flex-end;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .todo-title .tokki {
-  background-image: url(./assets/sleeping-tokki.png);
+  background-image: url(./assets/sleep-miffy.jpeg);
   width: 100px;
   height: 100px;
   background-size: cover;
+  border-radius: 10px;
   margin-right: 2px;
 }
 
 .todo-title h1 {
   line-height: 1.1;
+  margin: 0 21px 21px 0;
 }
 
 /* List element */
@@ -106,29 +108,30 @@ body {
   font-family: 'NanumSquareRound';
   width: 300px;
   height: 52px;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 16px;
   padding: 10px 15px;
   margin-right: 8px;
 }
 
 #todo-form input:focus {
-  border: 1px solid #ACCF61;
+  border: 1px solid #2B292D;
 }
 
 #todo-form button {
+  font-family: 'NanumSquareRound';
   width: 100px;
   height: 52px;
   position: relative;
   padding: 10px 22px;
   border-radius: 10px;
-  border: none;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
+  /* border: 1px solid #2B292D; */
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
   cursor: pointer;
-  background-color: #ACCF61;
+  background-color: #E95E0C;
   transition: all 0.2s ease;
 }
 
@@ -150,22 +153,22 @@ body {
 
 #todo-form button:hover:before {
   top: -70%;
-  background-image: radial-gradient(circle, #ACCF61 20%, transparent 20%),
-    radial-gradient(circle, transparent 20%, #ACCF61 20%, transparent 30%),
-    radial-gradient(circle, #ACCF61 20%, transparent 20%),
-    radial-gradient(circle, #ACCF61 20%, transparent 20%),
-    radial-gradient(circle, transparent 10%, #ACCF61 15%, transparent 20%),
-    radial-gradient(circle, #ACCF61 20%, transparent 20%),
-    radial-gradient(circle, #ACCF61 20%, transparent 20%),
-    radial-gradient(circle, #ACCF61 20%, transparent 20%),
-    radial-gradient(circle, #ACCF61 20%, transparent 20%);
+  background-image: radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #fff 20%, transparent 30%),
+    radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #fff 15%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%);
   background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
     10% 10%, 18% 18%;
   background-position: 50% 120%;
-  animation: greentopBubbles 0.6s ease forwards;
+  animation: topBubbles 0.6s ease forwards;
 }
 
-@keyframes greentopBubbles {
+@keyframes topBubbles {
   0% {
     background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
       40% 90%, 55% 90%, 70% 90%;
@@ -185,19 +188,19 @@ body {
 
 #todo-form button:hover::after {
   bottom: -70%;
-  background-image: radial-gradient(circle, #ACCF61 20%, transparent 20%),
-    radial-gradient(circle, #ACCF61 20%, transparent 20%),
-    radial-gradient(circle, transparent 10%, #ACCF61 15%, transparent 20%),
-    radial-gradient(circle, #ACCF61 20%, transparent 20%),
-    radial-gradient(circle, #ACCF61 20%, transparent 20%),
-    radial-gradient(circle, #ACCF61 20%, transparent 20%),
-    radial-gradient(circle, #ACCF61 20%, transparent 20%);
+  background-image: radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #fff 15%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%);
   background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
   background-position: 50% 0%;
-  animation: greenbottomBubbles 0.6s ease forwards;
+  animation: bottomBubbles 0.6s ease forwards;
 }
 
-@keyframes greenbottomBubbles {
+@keyframes bottomBubbles {
   0% {
     background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
       70% -10%, 70% 0%;
@@ -231,7 +234,7 @@ body {
 #todo-all a {
   display: flex;
   align-items: center;
-  color: #888888;
+  color: #2B292D;
   font-size: 18px;
   letter-spacing: -0.01em;
 }
@@ -305,12 +308,11 @@ body {
 
 #showDate {
   font-family: 'NanumSquareRound';
-  position: absolute;
-  bottom: 50px;
-  right: 40px;
-  margin: 0;
-  font-size: 20px;
+  text-align: left;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.01em;
+  margin-bottom: 8px;
+  color: #2B292D;
 }

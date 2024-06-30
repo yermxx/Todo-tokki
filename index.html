@@ -10,12 +10,15 @@
 <body onload=showDate()>
   <div class="container">
     <div class='todo-title'>
+      <div class='todo-title-text'>
+        <div id="showDate" class="show-date"></div>
+        <h1>To-Do List</h1>
+      </div>
       <div class='tokki'></div>
-      <h1>To-Do<br />List</h1>
     </div>
     <form id='todo-form'>
-      <input class='list-input' type="text" placeholder='Add your Task <3'>
-      <button class='submit-btn' type='submit'>Add</button>
+      <input class='list-input' type="text" placeholder='할 일을 입력해 주세요.'>
+      <button class='submit-btn' type='submit'>+🥕</button>
     </form>
     <div id='todo-all'>
       <a id='all-check' href="#"><img src="./assets/all-check.png" alt="all-check">전체 선택</a>
@@ -23,7 +26,6 @@
     </div>
     <ul id="todo-list"></ul>
     <p id="taskCount">0 Tasks</p>
-    <div id="showDate" class="show-date"></div>
   </div>
   <script type="text/javascript" src="./todo.js"></script>
 </body>
