@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     /* 토끼 이미지 상태 업데이트 */
     function updateTokkiImage() {
       tokkiImage.style.backgroundImage = todoList.getElementsByTagName('li').length > 0
-        ? "url('./assets/awake-tokki.png')"
-        : "url('./assets/sleeping-tokki.png')";
+        ? "url('./assets/awake-miffy.png')"
+        : "url('./assets/sleeping-miffy.png')";
     }
 
     if (todoInput.value !== '') {
@@ -35,9 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
     checkBox.addEventListener('click', function() {
       if (checkBox.dataset.checked === 'false') {
           span.style.textDecoration = 'line-through';
-          span.style.textDecoration.color = '#ccc';
-          span.style.color = '#ccc';
-          checkBox.src = './assets/check-focus.png';
+          span.style.textDecoration.color = '#fff';
+          span.style.color = '#fff';
+          checkBox.src = './assets/check-white.png';
           checkBox.dataset.checked = 'true';
       } else {
           span.style.textDecoration = 'none';
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     deleteIcon.addEventListener('mouseover', () => {
-      deleteIcon.src = './assets/delete-icon-green.png';
+      deleteIcon.src = './assets/delete-icon-white.png';
     });
     deleteIcon.addEventListener('mouseout', () => {
       deleteIcon.src = './assets/delete-icon.png';
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tasks = todoList.getElementsByTagName('li').length;
 
     if (tasks > 0) {
-      taskCount.textContent = `✨ ${tasks} Tasks! ✨`;
+      taskCount.textContent = `🥕${tasks} Tasks!`;
     } else {
       taskCount.textContent = '';
     }
@@ -130,8 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
   /* 전체 선택 상태 업데이트 */
   function updateAllCheckState() {
     if (areAllChecked()) {
-      allCheck.style.color = '#ACCF61';
-      allCheckImage.src = './assets/all-check-green.png';
+      allCheck.style.color = '#fff';
+      allCheckImage.src = './assets/all-check-white.png';
       allCheck.dataset.checked = 'true';
     } else {
       allCheck.style.color = '';
@@ -150,16 +150,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!areAllChecked()) {
       checkboxes.forEach((checkbox) => {
-        checkbox.src = './assets/check-focus.png';
+        checkbox.src = './assets/check-white.png';
         checkbox.dataset.checked = 'true';
       });
       todoText.forEach((todoText) => {
         todoText.style.textDecoration = 'line-through';
-        todoText.style.textDecoration.color = '#ccc';
-        todoText.style.color = '#ccc';
+        todoText.style.textDecoration.color = '#fff';
+        todoText.style.color = '#fff';
       });
-      allCheck.style.color = '#ACCF61';
-      allCheckImage.src = './assets/all-check-green.png';
+      allCheck.style.color = '#fff';
+      allCheckImage.src = './assets/all-check-white.png';
       allCheck.dataset.checked = 'true';
     } else {
       checkboxes.forEach((checkbox) => {
@@ -181,8 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
 
     if (areAllChecked()) {
-      allDelete.style.color = '#ACCF61';
-      allDeleteImage.src = './assets/all-delete-green.png';
+      allDelete.style.color = '#fff';
+      allDeleteImage.src = './assets/all-delete-white.png';
       const toDos = todoList.querySelectorAll('li');
       toDos.forEach((li) => {
         todoList.removeChild(li);

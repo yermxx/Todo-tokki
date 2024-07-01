@@ -66,7 +66,7 @@ body {
   max-width: 500px;
   height: 800px;
   border-radius: 14px;
-  background-color: #F9CA00;
+  background-color: #FED729;
   padding: 50px 40px;
 }
 
@@ -83,7 +83,7 @@ body {
 }
 
 .todo-title .tokki {
-  background-image: url(./assets/sleep-miffy.jpeg);
+  background-image: url(./assets/sleep-miffy.png);
   width: 100px;
   height: 100px;
   background-size: cover;
@@ -115,9 +115,9 @@ body {
   margin-right: 8px;
 }
 
-#todo-form input:focus {
+/* #todo-form input:focus {
   border: 1px solid #2B292D;
-}
+} */
 
 #todo-form button {
   font-family: 'NanumSquareRound';
