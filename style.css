@@ -250,12 +250,12 @@ body {
 }
 
 #todo-list::-webkit-scrollbar-thumb:hover {
-  background-color: #ACCF61;
+  background-color: #246D24;
   border-radius: 10px;
 }
 
 #todo-list::-webkit-scrollbar-track:hover {
-  background-color: #ccc;
+  background-color: #fff;
   border-radius: 10px;
 }
 
@@ -277,6 +277,7 @@ body {
 
 #todo-list li span {
   display: inline-flex;
+  max-width: 345px;
   justify-content: center;
   align-items: center;
   font-family: 'NanumSquareRound';

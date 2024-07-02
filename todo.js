@@ -83,6 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
     todoInput.value= '';
     todoInput.focus();
 
+    // 리스트의 마지막 항목으로 자동 스크롤
+    todoList.scrollTop = todoList.scrollHeight;
+
     updateTokkiImage();
     updateTaskCount();
     }
@@ -94,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tasks = todoList.getElementsByTagName('li').length;
 
     if (tasks > 0) {
-      taskCount.textContent = `🥕${tasks} Tasks!`;
+      taskCount.textContent = `🥕 ${tasks} Tasks!`;
     } else {
       taskCount.textContent = '';
     }
