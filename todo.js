@@ -11,10 +11,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const allDelete = document.getElementById('all-delete');
   const allDeleteImage = allDelete.querySelector('img');
 
+  let saveTask = [];
+
   /* ADD 버튼 click 시 이벤트 실행 */
   submitBtn.addEventListener('click', function(event) {
 
     event.preventDefault();
+
+    /* localStorage에 tasks 저장 */
+    function saveTasks() {
+      localStorage.setItem('saveTask', JSON.stringify(saveTask));
+    }
+
+    /* localStorage에서 데이터 불러오기 */
+    function loadTasks() {
+    const savedTasks = localStorage.getItem('li');
+    if (savedTasks) {
+      todoList = JSON.parse(savedTasks);
+      renderTodos();
+      }
+    }
 
     /* 토끼 이미지 상태 업데이트 */
     function updateTokkiImage() {
@@ -45,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
           checkBox.src = './assets/check.png';
           checkBox.dataset.checked = 'false';
       }
+      saveTasks();
     });
 
     const span = document.createElement('span');
@@ -60,6 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
       updateTokkiImage();
       updateAllCheckState();
       updateTaskCount();
+
+      /* saveTask 배열에서 해당 항목 제거 */
+      const index = saveTask.findIndex(task => task.text === taskText);
+      if (index > -1) {
+        saveTask.splice(index, 1);
+        saveTasks();
+      }
 
       const updateDeleteIcons = document.querySelectorAll('.delete-icon').length;
       if (updateDeleteIcons === 0) {
@@ -83,11 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
     todoInput.value= '';
     todoInput.focus();
 
-    // 리스트의 마지막 항목으로 자동 스크롤
+    /* 리스트의 마지막 항목으로 자동 스크롤 */
     todoList.scrollTop = todoList.scrollHeight;
 
     updateTokkiImage();
     updateTaskCount();
+    saveTasks();
     }
     });
 
@@ -203,3 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
   updateAllCheckState();
   updateTaskCount();
 });
+
+/* 페이지 로드 시 저장된 데이터 불러오기 */
+document.addEventListener('DOMContentLoaded', loadTasks);
