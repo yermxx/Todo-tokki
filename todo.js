@@ -73,7 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
   /* 전체 선택 요소 상태 확인 */
   function areAllChecked() {
     const checkboxes = document.querySelectorAll('.checkbox');
-    return Array.from(checkboxes).every((checkbox) => checkbox.dataset.checked === 'true');
+    return Array.from(checkboxes).every(
+      (checkbox) => checkbox.dataset.checked === 'true'
+    );
   }
 
   /* 전체 선택 상태 업데이트 */
@@ -136,7 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
         saveTasks();
       }
 
-      const updateDeleteIcons = document.querySelectorAll('.delete-icon').length;
+      const updateDeleteIcons =
+        document.querySelectorAll('.delete-icon').length;
       if (updateDeleteIcons === 0) {
         location.reload();
       }

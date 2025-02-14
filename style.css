@@ -4,7 +4,8 @@
 
 @font-face {
   font-family: 'NanumSquareRound';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -155,10 +156,13 @@ body {
   top: -70%;
   background-image: radial-gradient(circle, #fff 20%, transparent 20%),
     radial-gradient(circle, transparent 20%, #fff 20%, transparent 30%),
-    radial-gradient(circle, #fff 20%, transparent 20%), radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%),
     radial-gradient(circle, transparent 10%, #fff 15%, transparent 20%),
-    radial-gradient(circle, #fff 20%, transparent 20%), radial-gradient(circle, #fff 20%, transparent 20%),
-    radial-gradient(circle, #fff 20%, transparent 20%), radial-gradient(circle, #fff 20%, transparent 20%);
+    radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%);
   background-size:
     10% 10%,
     20% 20%,
@@ -226,8 +230,10 @@ body {
   background-image: radial-gradient(circle, #fff 20%, transparent 20%),
     radial-gradient(circle, #fff 20%, transparent 20%),
     radial-gradient(circle, transparent 10%, #fff 15%, transparent 20%),
-    radial-gradient(circle, #fff 20%, transparent 20%), radial-gradient(circle, #fff 20%, transparent 20%),
-    radial-gradient(circle, #fff 20%, transparent 20%), radial-gradient(circle, #fff 20%, transparent 20%);
+    radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%);
   background-size:
     15% 15%,
     20% 20%,
