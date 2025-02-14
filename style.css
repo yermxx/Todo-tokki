@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Reset CSS */
@@ -22,7 +22,7 @@ a {
 button,
 input,
 textarea {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   border: none;
 }
 
@@ -48,7 +48,7 @@ p {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: -0.01em;
-  color: #2B292D;
+  color: #2b292d;
 }
 
 /* Container */
@@ -66,7 +66,7 @@ body {
   max-width: 500px;
   height: 800px;
   border-radius: 14px;
-  background-color: #FED729;
+  background-color: #fed729;
   padding: 50px 40px;
 }
 
@@ -131,7 +131,7 @@ body {
   font-size: 22px;
   font-weight: 700;
   cursor: pointer;
-  background-color: #E95E0C;
+  background-color: #e95e0c;
   transition: all 0.2s ease;
 }
 
@@ -142,7 +142,7 @@ body {
 #todo-form button::before,
 #todo-form button::after {
   position: absolute;
-  content: "";
+  content: '';
   width: 150%;
   left: 50%;
   height: 100%;
@@ -151,70 +151,134 @@ body {
   background-repeat: no-repeat;
 }
 
-#todo-form button:hover:before {
+#todo-form button.animate:before {
   top: -70%;
   background-image: radial-gradient(circle, #fff 20%, transparent 20%),
     radial-gradient(circle, transparent 20%, #fff 20%, transparent 30%),
-    radial-gradient(circle, #fff 20%, transparent 20%),
-    radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%), radial-gradient(circle, #fff 20%, transparent 20%),
     radial-gradient(circle, transparent 10%, #fff 15%, transparent 20%),
-    radial-gradient(circle, #fff 20%, transparent 20%),
-    radial-gradient(circle, #fff 20%, transparent 20%),
-    radial-gradient(circle, #fff 20%, transparent 20%),
-    radial-gradient(circle, #fff 20%, transparent 20%);
-  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
-    10% 10%, 18% 18%;
+    radial-gradient(circle, #fff 20%, transparent 20%), radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%), radial-gradient(circle, #fff 20%, transparent 20%);
+  background-size:
+    10% 10%,
+    20% 20%,
+    15% 15%,
+    20% 20%,
+    18% 18%,
+    10% 10%,
+    15% 15%,
+    10% 10%,
+    18% 18%;
   background-position: 50% 120%;
-  animation: topBubbles 0.6s ease forwards;
+  animation: topBubbles 1.2s ease forwards;
 }
 
 @keyframes topBubbles {
   0% {
-    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
-      40% 90%, 55% 90%, 70% 90%;
+    background-position:
+      5% 90%,
+      10% 90%,
+      10% 90%,
+      15% 90%,
+      25% 90%,
+      25% 90%,
+      40% 90%,
+      55% 90%,
+      70% 90%;
   }
 
   50% {
-    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
-      50% 50%, 65% 20%, 90% 30%;
+    background-position:
+      0% 80%,
+      0% 20%,
+      10% 40%,
+      20% 0%,
+      30% 30%,
+      22% 50%,
+      50% 50%,
+      65% 20%,
+      90% 30%;
   }
 
   100% {
-    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
-      50% 40%, 65% 10%, 90% 20%;
-    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    background-position:
+      0% 70%,
+      0% 10%,
+      10% 30%,
+      20% -10%,
+      30% 20%,
+      22% 40%,
+      50% 40%,
+      65% 10%,
+      90% 20%;
+    background-size:
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%;
   }
 }
 
-#todo-form button:hover::after {
+#todo-form button.animate:after {
   bottom: -70%;
   background-image: radial-gradient(circle, #fff 20%, transparent 20%),
     radial-gradient(circle, #fff 20%, transparent 20%),
     radial-gradient(circle, transparent 10%, #fff 15%, transparent 20%),
-    radial-gradient(circle, #fff 20%, transparent 20%),
-    radial-gradient(circle, #fff 20%, transparent 20%),
-    radial-gradient(circle, #fff 20%, transparent 20%),
-    radial-gradient(circle, #fff 20%, transparent 20%);
-  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+    radial-gradient(circle, #fff 20%, transparent 20%), radial-gradient(circle, #fff 20%, transparent 20%),
+    radial-gradient(circle, #fff 20%, transparent 20%), radial-gradient(circle, #fff 20%, transparent 20%);
+  background-size:
+    15% 15%,
+    20% 20%,
+    18% 18%,
+    20% 20%,
+    15% 15%,
+    20% 20%,
+    18% 18%;
   background-position: 50% 0%;
-  animation: bottomBubbles 0.6s ease forwards;
+  animation: bottomBubbles 1.2s ease forwards;
 }
 
 @keyframes bottomBubbles {
   0% {
-    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
-      70% -10%, 70% 0%;
+    background-position:
+      10% -10%,
+      30% 10%,
+      55% -10%,
+      70% -10%,
+      85% -10%,
+      70% -10%,
+      70% 0%;
   }
 
   50% {
-    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+    background-position:
+      0% 80%,
+      20% 80%,
+      45% 60%,
+      60% 100%,
+      75% 70%,
+      95% 60%,
       105% 0%;
   }
 
   100% {
-    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+    background-position:
+      0% 90%,
+      20% 90%,
+      45% 70%,
+      60% 110%,
+      75% 80%,
+      95% 70%,
       110% 10%;
-    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    background-size:
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%;
   }
 }
 
@@ -234,23 +298,27 @@ body {
 #todo-all a {
   display: flex;
   align-items: center;
-  color: #2B292D;
+  color: #2b292d;
   font-size: 18px;
   letter-spacing: -0.01em;
 }
 
 #todo-list {
-  overflow: auto;
+  overflow: overlay;
   max-height: 400px;
   margin-bottom: 6px;
 }
 
 #todo-list::-webkit-scrollbar {
+  width: 0;
+}
+
+#todo-list:hover::-webkit-scrollbar {
   width: 8px;
 }
 
-#todo-list::-webkit-scrollbar-thumb:hover {
-  background-color: #246D24;
+#todo-list:hover::-webkit-scrollbar-thumb {
+  background-color: #246d24;
   border-radius: 10px;
 }
 
@@ -306,7 +374,7 @@ body {
   bottom: 50px;
   margin: 0;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 900;
   line-height: 1;
   letter-spacing: -0.01em;
 }
@@ -319,5 +387,5 @@ body {
   line-height: 1;
   letter-spacing: -0.01em;
   margin-bottom: 8px;
-  color: #2B292D;
+  color: #2b292d;
 }
