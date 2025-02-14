@@ -42,6 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
           : "url('./assets/sleeping-miffy.png')";
     }
 
+    /* 상태 변경 시 UI 업데이트 */
+    function updateUI() {
+      updateTokkiImage();
+      updateAllCheckState();
+      updateTaskCount();
+    }
+
     if (todoInput.value !== '') {
       const li = document.createElement('li');
 
@@ -75,9 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
       deleteIcon.classList.add('delete-icon');
       deleteIcon.addEventListener('click', function () {
         todoList.removeChild(li);
-        updateTokkiImage();
-        updateAllCheckState();
-        updateTaskCount();
+        updateUI();
 
         /* saveTask 배열에서 해당 항목 제거 */
         const index = saveTask.findIndex((task) => task.text === taskText);
@@ -113,9 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
       /* 리스트의 마지막 항목으로 자동 스크롤 */
       todoList.scrollTop = todoList.scrollHeight;
 
-      updateTokkiImage();
-      updateTaskCount();
-      saveTasks();
+      updateUI();
     }
   });
 
@@ -217,17 +220,13 @@ document.addEventListener('DOMContentLoaded', () => {
         todoList.removeChild(li);
       });
       location.reload();
-      updateTokkiImage();
-      updateAllCheckState();
-      updateTaskCount();
+      updateUI();
     } else {
       alert('전체 삭제를 위해서는 먼저 전체 선택을 해주세요!');
     }
   });
 
-  updateTokkiImage();
-  updateAllCheckState();
-  updateTaskCount();
+  updateUI();
 });
 
 /* 페이지 로드 시 저장된 데이터 불러오기 */
